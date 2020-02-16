@@ -26,7 +26,7 @@ public class Bar : MonoBehaviour
         goBarO= GameObject.Find("ImgFilledO");
         if (goBarO)
         {
-            //Debug.Log("Name: " + goBarO.name);
+            Debug.Log("Name: " + goBarO.name);
             Image img = goBarO.GetComponent<Image>();
             if (img != null)
             {

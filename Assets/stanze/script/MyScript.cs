@@ -19,7 +19,7 @@ public class MyScript : MonoBehaviour
         //Fill -= Time.deltaTime * 0.1f;
 
         Bar.fillAmount = Fill;//modifichi il valore della barra Fill
-
+        if (Fill==0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void PerdeVita()
     {
