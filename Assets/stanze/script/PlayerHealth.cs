@@ -89,7 +89,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void remove(float amount)
     {
+        
         currentHealth -= amount;
+        Debug.Log(currentHealth);
+        ChangeBarSize(0.1f);
+        
         
        // script.PerdeV();
     }

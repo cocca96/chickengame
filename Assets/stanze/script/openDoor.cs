@@ -53,7 +53,7 @@ public class openDoor : MonoBehaviour
 
 
             //keyPresa.GetComponent<Image>().enabled = false;
-            Debug.Log("NOCHIAVESISCHERMO");
+
             
             countDown.SetTimer(600);
             barraOssigeno.perdeO();
