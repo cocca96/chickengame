@@ -10,15 +10,17 @@ public class OnTrigger : MonoBehaviour
     private MyScript script;
     private GameObject goBar;//non c'era più
     private BarraOssigeno barraO;//aggiunto
+    public GameObject player;
+
     
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player" && isSchiacciato == false)
+        if (other== player.GetComponent<Collider>() && isSchiacciato == false)
         {
-            
-            ChangeBarSize(0.1f);//aggiunto
             StartCoroutine(ReduceLife(other, TimeWaiting));
+            //script.PerdeV();
+            //ChangeBarSize(0.1f);//aggiunto
         }
 
 
@@ -35,8 +37,8 @@ public class OnTrigger : MonoBehaviour
                 Debug.Log("Img comp trovata: " + img.name);
 
                 //img.fillAmount = 0.5f;
-                script = img.GetComponent<MyScript>();
-                script.Fill -= size;
+               // script = img.GetComponent<MyScript>();
+                //script.Fill -= size;
             }
             else
             {
@@ -58,6 +60,7 @@ public class OnTrigger : MonoBehaviour
         if (health.currentHealth != 0)
         {
             health.remove(1);
+            Debug.Log("colpito");
             
             yield return new WaitForSeconds(time);
             isSchiacciato = false;

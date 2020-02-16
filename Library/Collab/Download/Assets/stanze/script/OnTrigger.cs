@@ -7,7 +7,7 @@ public class OnTrigger : MonoBehaviour
 {
     [SerializeField] private float TimeWaiting = 3f;
     [SerializeField] private bool isSchiacciato;
-    public MyScript script;
+    private MyScript script;
     private GameObject goBar;//non c'era più
     private BarraOssigeno barraO;//aggiunto
     public GameObject player;
@@ -18,9 +18,7 @@ public class OnTrigger : MonoBehaviour
     {
         if (other== player.GetComponent<Collider>() && isSchiacciato == false)
         {
-            
-            StartCoroutine(ReduceLife(other, TimeWaiting));
-            script.PerdeV();
+            //script.PerdeV();
             ChangeBarSize(0.1f);//aggiunto
         }
 
@@ -56,6 +54,7 @@ public class OnTrigger : MonoBehaviour
     private IEnumerator ReduceLife(Collider other,float time)
     {
         isSchiacciato = true;
+
         PlayerHealth health = other.GetComponent<PlayerHealth>();
         if (health.currentHealth != 0)
         {
