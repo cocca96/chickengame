@@ -18,8 +18,9 @@ public class OnTrigger : MonoBehaviour
     {
         if (other== player.GetComponent<Collider>() && isSchiacciato == false)
         {
+            StartCoroutine(ReduceLife(other, TimeWaiting));
             //script.PerdeV();
-            ChangeBarSize(0.1f);//aggiunto
+            //ChangeBarSize(0.1f);//aggiunto
         }
 
 
@@ -36,8 +37,8 @@ public class OnTrigger : MonoBehaviour
                 Debug.Log("Img comp trovata: " + img.name);
 
                 //img.fillAmount = 0.5f;
-                script = img.GetComponent<MyScript>();
-                script.Fill -= size;
+               // script = img.GetComponent<MyScript>();
+                //script.Fill -= size;
             }
             else
             {
@@ -60,6 +61,7 @@ public class OnTrigger : MonoBehaviour
         {
             health.remove(1);
             Debug.Log("colpito");
+            
             yield return new WaitForSeconds(time);
             isSchiacciato = false;
 

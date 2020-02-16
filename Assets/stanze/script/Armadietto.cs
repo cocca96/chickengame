@@ -21,7 +21,7 @@ public class Armadietto : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("opened" + opened);
+        //Debug.Log("opened" + opened);
         _originalRotation = _doorHindge.transform.localRotation;
 
     }

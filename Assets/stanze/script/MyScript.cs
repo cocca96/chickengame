@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MyScript : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class MyScript : MonoBehaviour
 
         Bar.fillAmount = Fill;//modifichi il valore della barra Fill
 
+    }
+    public void PerdeVita()
+    {
+        Fill -= Time.deltaTime * 0.005f;//da modificare se vogliamo più tempo
+        if (Bar.fillAmount <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
    
 }

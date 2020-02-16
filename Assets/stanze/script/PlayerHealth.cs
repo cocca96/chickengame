@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
    
    void ChangeBarSize(float size)
     {
-        //goBar = GameObject.Find("ImgFilled");
+        goBar = GameObject.Find("ImgFilled");
         if (goBar)
         {
             //Debug.Log("Name: " + goBar.name);
@@ -90,8 +90,10 @@ public class PlayerHealth : MonoBehaviour
     public void remove(float amount)
     {
         currentHealth -= amount;
-        
-       // script.PerdeV();
+        Debug.Log(currentHealth);
+        ChangeBarSize(0.1f);
+
+        // script.PerdeVita();
     }
 
 }
